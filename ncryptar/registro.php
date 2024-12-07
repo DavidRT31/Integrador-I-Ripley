@@ -102,7 +102,7 @@
                 </div>
                 <div class='col-md-6'>
                     <label for='dni' class='form-label'><i class='bi bi-card-text'></i> DNI</label>
-                    <input type='text' class='form-control' id='dni' name="dni" required placeholder='Ingrese su DNI'>
+                    <input type='number' class='form-control' id='dni' name="dni" required placeholder='Ingrese su DNI'>
                 </div>
                 <div class='col-md-6'>
                     <label for='direccion' class='form-label'><i class='bi bi-house-fill'></i> Dirección</label>
@@ -110,11 +110,12 @@
                 </div>
                 <div class='col-md-6'>
                     <label for='telefono' class='form-label'><i class='bi bi-phone-fill'></i> Teléfono</label>
-                    <input type='tel' class='form-control' id='telefono' name="telefono" required placeholder='Ingrese su teléfono'>
+                    <input type='number' class='form-control' id='telefono' name="telefono" required placeholder='Ingrese su teléfono'>
                 </div>
                 <div class='col-md-6'>
                     <label for='contraseña' class='form-label'><i class='bi bi-key-fill'></i> Contraseña</label>
                     <input type='password' class='form-control' id='contraseña' name="contrasena" required placeholder='Ingrese su contraseña'>
+                    <input type='text' hidden class='form-control' id='rol' name="rol" placeholder='Roles'>
                 </div>
             </div>
             <div class='d-flex align-items-center justify-content-center mb-3'>

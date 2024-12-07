@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $direccion = htmlspecialchars($_POST['direccion']);
     $telefono = htmlspecialchars($_POST['telefono']);
     $contrasena = htmlspecialchars($_POST['contrasena']);
-    $rol = htmlspecialchars($_POST['rol'] === '' ? 'cliente' : 'admin');
+    $rol = htmlspecialchars($_POST['rol']);
 
     $sql_verificar = "SELECT * FROM usuarios WHERE correo = '$correo' OR dni = '$dni'";
     $usuarios_existentes = consultar($sql_verificar);

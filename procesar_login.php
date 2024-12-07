@@ -50,12 +50,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Almacenar información relevante en la sesión
                 $_SESSION['user_id'] = $usuario['id'];
                 $_SESSION['nombre'] = $usuario['nombre'];
+                $_SESSION['rol'] = $usuario['user_rol']; // Para el control de administrador o redireccionamiento de usuario
                 $_SESSION['correo'] = $usuario['correo']; // Para reenviar OTP en verificar_otp.php
 
-                // Generar y enviar OTP
-                generarYEnviarOTP($usuario['correo'], $usuario['nombre']);
-                header('Location: verificar_otp.php');
-                exit();
+                if ($_SESSION['rol'] == 'cliente') {
+                    // Generar y enviar OTP
+                    generarYEnviarOTP($usuario['correo'], $usuario['nombre']);
+                    header('Location: verificar_otp.php');
+                    exit();
+                } else {
+                    header('Location: ./admin/admin.php');
+                    exit();
+                }
+
             } else {
                 // Log de error cuando las credenciales son incorrectas
                 $log->warning('Credenciales incorrectas', [
